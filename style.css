@@ -1,0 +1,106 @@
+/* General styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.pagelayout {
+    display: flex;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+/* Sidebar styling */
+
+h1 { 
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+img {
+    height: 50px;
+    width: auto;
+    filter: invert(29%) sepia(34%) saturate(840%) hue-rotate(45deg) brightness(89%) contrast(95%);
+}
+
+input {
+    outline: none;
+    border: 1px solid #365314;
+    flex:1;
+    padding: 5px;
+}
+
+.input {
+    display: flex;
+}
+
+.sidebar {
+    width: 30vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 9fr 1fr 12fr;
+    background-color: #d6d3d1;
+    gap: 10px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.MyLibrary, #form {
+    padding: 20px;
+}
+
+.buttoncontainer {
+    margin-left: 20px;
+}
+
+.MyLibrary, #form {
+    color: #365314;
+}
+
+#addbook {
+    color: #d6d3d1;
+    background-color: #365314;
+    padding: 10px;
+}
+
+/* Main content styling */
+
+.maincontent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px;
+    background-color: #365314;
+    color: #d6d3d1;
+    align-items: center;
+    gap: 20px;
+}
+
+.book-header {
+    height: 5vh;
+    width: 50vw;
+    background-color: #d6d3d1;
+}
+
+.book-list {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+tr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5vw;
+    color: #365314;
+    height: 5vh;
+    width: 50vw;
+}

@@ -73,10 +73,13 @@ function showBooksInLibrary() {
 function listenToClick() {
     document.addEventListener(('click'), (event) => {
         const tr = event.target.parentNode.parentNode.rowIndex;
+        // Input a new book button
         if (event.target.id === 'addbook') {
             inputNewBook();
+        // Remove a chosen book
         } else if (event.target.id === 'removeBook') {
             myLibrary.splice(tr, 1);
+        // Toggle a chosen book status
         } else if (event.target.classList.contains('fa-check')) {
             event.target.classList.remove('fa-check');
             event.target.classList.add('fa-times');

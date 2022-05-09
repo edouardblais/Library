@@ -77,6 +77,14 @@ function listenToClick() {
             inputNewBook();
         } else if (event.target.id === 'removeBook') {
             myLibrary.splice(tr, 1);
+        } else if (event.target.classList.contains('fa-check')) {
+            event.target.classList.remove('fa-check');
+            event.target.classList.add('fa-times');
+            myLibrary[tr].readornot = false;
+        } else if (event.target.classList.contains('fa-times')) {
+            event.target.classList.remove('fa-times');
+            event.target.classList.add('fa-check');
+            myLibrary[tr].readornot = true;
         }
         showBooksInLibrary();
     })

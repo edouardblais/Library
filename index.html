@@ -11,7 +11,7 @@
 <body>
     <div class="pagelayout">
         <div class="sidebar">
-            <h1 class="MyLibrary"><img src="icons/book-open-page-variant-outline.svg"> My Library</h1>
+            <h1 class="MyLibrary"><img id="logo" src="icons/book-open-page-variant-outline.svg"> My Library</h1>
             <form id="form">
                 <div class="input">
                     <input type="text" name="title" id="title" placeholder="What is the book's title?" required>
@@ -21,6 +21,9 @@
                 </div>
                 <div class="input">
                     <input type="text" name="pages" id="pages" placeholder="What is the total amount of pages?" required>
+                </div>
+                <div>
+                    <span class="rating"><img src="icons/star.svg" class="stars" id="onestar"><img src="icons/star.svg" class="stars" id="twostar"><img src="icons/star.svg" class="stars" id="threestar"> How would you rate the book?</span>
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="status" id="status">
@@ -35,11 +38,12 @@
         <div class="maincontent">
             <table class="book-header">
                 <tr id="library-header">
-                    <td>TITLE</td>
-                    <td>AUTHOR</td>
-                    <td>PAGES</td>
-                    <td>STATUS</td>
-                    <td>REMOVE</td>
+                    <td class="library-header">TITLE</td>
+                    <td class="library-header">AUTHOR</td>
+                    <td class="library-header">PAGES</td>
+                    <td class="library-header">RATING</td>
+                    <td class="library-header">STATUS</td>
+                    <td class="library-header">REMOVE</td>
                 </tr>
             </table>
             <table class="book-list">

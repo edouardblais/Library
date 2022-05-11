@@ -1,4 +1,5 @@
 let myLibrary = [];
+let rating = 0;
 
 function inputNewBook() {
     const titleInput = document.querySelector('#title').value;
@@ -8,24 +9,25 @@ function inputNewBook() {
 
     if (titleInput !== '' && authorInput !== '' && pagesInput > 0) {
         if (statusInput.checked) {
-            addBookToLibrary(titleInput, authorInput, pagesInput, true);
+            addBookToLibrary(titleInput, authorInput, pagesInput, rating, true);
         } else {
-            addBookToLibrary(titleInput, authorInput, pagesInput, false); 
+            addBookToLibrary(titleInput, authorInput, pagesInput, rating, false); 
         }
         document.getElementById('form').reset();
     }
 }
 
-function addBookToLibrary(title, author, pages, readornot) {
-    const book = new Book(title, author, pages, readornot);
+function addBookToLibrary(title, author, pages, rating, readornot) {
+    const book = new Book(title, author, pages, rating, readornot);
     myLibrary.push(book);
     showBooksInLibrary();
 }
 
-function Book(title, author, pages, readornot) {
+function Book(title, author, pages, rating, readornot) {
     this.title = title
     this.author = author
     this.pages = pages
+    this.rating = rating
     this.readornot = readornot
     this.info = function() {
         return (title + " by " + author + ", " + pages + "pages, " + readornot)
@@ -50,6 +52,31 @@ function showBooksInLibrary() {
         const bookPages = document.createElement('td');
         bookPages.textContent = myLibrary[i].pages;
         bookrow.appendChild(bookPages);
+        // rating 
+        const bookRating = document.createElement('td');
+        if (rating === 1) {
+            img = document.createElement('img');
+            img.src = "icons/star.svg";
+            bookRating.appendChild(img);
+        } else if (rating === 2) {
+            img = document.createElement('img');
+            img.src = "icons/star.svg";
+            bookRating.appendChild(img);
+            img2 = document.createElement('img');
+            img2.src = "icons/star.svg";
+            bookRating.appendChild(img2);
+        } else if (rating === 3) {
+            img = document.createElement('img');
+            img.src = "icons/star.svg";
+            bookRating.appendChild(img);
+            img2 = document.createElement('img');
+            img2.src = "icons/star.svg";
+            bookRating.appendChild(img2);
+            img3 = document.createElement('img');
+            img3.src = "icons/star.svg";
+            bookRating.appendChild(img3);
+        };
+        bookrow.appendChild(bookRating);
         // status: read or not read
         const bookStatus = document.createElement('td');
         const statusSymbol = document.createElement('i');
@@ -93,8 +120,32 @@ function listenToClick() {
     })
 }
 
+function inputRating() {
+    const onestar = document.getElementById('onestar');
+    const twostar = document.getElementById('twostar');
+    const threestar = document.getElementById('threestar');
+
+    document.addEventListener(('click'), (event) => {
+        if (event.target.id === 'onestar') {
+            onestar.classList.add('ratingstars');
+            rating = 1;
+        } else if (event.target.id === 'twostar') {
+            onestar.classList.add('ratingstars');
+            twostar.classList.add('ratingstars');
+            rating = 2;
+        } else if (event.target.id === 'threestar') {
+            onestar.classList.add('ratingstars');
+            twostar.classList.add('ratingstars');
+            threestar.classList.add('ratingstars');
+            rating = 3;
+        }
+    })
+    return rating;
+}
+
 showBooksInLibrary();
 listenToClick();
+inputRating();
 
 
 

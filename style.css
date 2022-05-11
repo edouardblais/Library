@@ -19,10 +19,16 @@ h1 {
     font-weight: 700;
 }
 
-img {
+#logo {
     height: 50px;
     width: auto;
     filter: invert(29%) sepia(34%) saturate(840%) hue-rotate(45deg) brightness(89%) contrast(95%);
+}
+
+img {
+    height: 30px;
+    width: auto;
+    filter: invert(93%) sepia(44%) saturate(3398%) hue-rotate(321deg) brightness(110%) contrast(98%);
 }
 
 input {
@@ -40,7 +46,7 @@ input {
     width: 30vw;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 3fr 9fr 1fr 12fr;
+    grid-template-rows: 3fr 12fr 1fr 9fr;
     background-color: #d6d3d1;
     gap: 10px;
 }
@@ -69,6 +75,19 @@ input {
     padding: 10px;
 }
 
+#onestar, #twostar, #threestar {
+    width: 30px;
+    height: auto;
+}
+
+.stars {
+    filter: invert(29%) sepia(34%) saturate(840%) hue-rotate(45deg) brightness(89%) contrast(95%);
+}
+
+.ratingstars {
+    filter: invert(93%) sepia(44%) saturate(3398%) hue-rotate(321deg) brightness(110%) contrast(98%);
+}
+
 /* Main content styling */
 
 .maincontent {
@@ -76,17 +95,16 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 30px;
-    background-color: #365314;
-    color: #d6d3d1;
+    padding: 3vh;
+    background-color: #f1f5f9;
     align-items: center;
-    gap: 20px;
+    gap: 3vh;
 }
 
 .book-header {
     height: 5vh;
-    width: 50vw;
-    background-color: #d6d3d1;
+    width: 60vw;
+    background-color: #365314;
 }
 
 .book-list {
@@ -95,12 +113,32 @@ input {
     flex-direction: column;
 }
 
+.library-header {
+    color: #d6d3d1;
+    border-bottom: none;
+}
+
+.fa-times {
+    color: #b91c1c;
+}
+
+.fa-check {
+    color: #0369a1;
+}
+
+.fa-trash {
+    color: #171717;
+}
+
 tr {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
     align-items: center;
     gap:5vw;
     color: #365314;
     height: 5vh;
-    width: 50vw;
+    width: 60vw;
+    border-bottom: 1px dashed #365314;
 }

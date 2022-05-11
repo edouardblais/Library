@@ -14,6 +14,7 @@ function inputNewBook() {
             addBookToLibrary(titleInput, authorInput, pagesInput, rating, false); 
         }
         document.getElementById('form').reset();
+        resetRating();
     }
 }
 
@@ -54,18 +55,18 @@ function showBooksInLibrary() {
         bookrow.appendChild(bookPages);
         // rating 
         const bookRating = document.createElement('td');
-        if (rating === 1) {
+        if (myLibrary[i].rating === 1) {
             img = document.createElement('img');
             img.src = "icons/star.svg";
             bookRating.appendChild(img);
-        } else if (rating === 2) {
+        } else if (myLibrary[i].rating === 2) {
             img = document.createElement('img');
             img.src = "icons/star.svg";
             bookRating.appendChild(img);
             img2 = document.createElement('img');
             img2.src = "icons/star.svg";
             bookRating.appendChild(img2);
-        } else if (rating === 3) {
+        } else if (myLibrary[i].rating === 3) {
             img = document.createElement('img');
             img.src = "icons/star.svg";
             bookRating.appendChild(img);
@@ -95,7 +96,7 @@ function showBooksInLibrary() {
         removeBook.appendChild(removeSymbol);
         bookrow.appendChild(removeBook);
     };
-}
+};
 
 function listenToClick() {
     document.addEventListener(('click'), (event) => {
@@ -141,6 +142,18 @@ function inputRating() {
         }
     })
     return rating;
+}
+
+function resetRating() {
+    const onestarreset = document.getElementById('onestar');
+    const twostarreset = document.getElementById('twostar');
+    const threestarreset = document.getElementById('threestar');
+
+    onestarreset.classList.remove('ratingstars');
+    twostarreset.classList.remove('ratingstars');
+    threestarreset.classList.remove('ratingstars');
+
+    rating = 0;
 }
 
 showBooksInLibrary();

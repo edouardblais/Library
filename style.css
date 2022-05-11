@@ -52,7 +52,7 @@ input[type=checkbox] {
     width: 30vw;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 3fr 11fr 1fr 10fr;
+    grid-template-rows: 3fr 11fr 1fr 9fr 1fr;
     background-color: #d4d4d4;
     gap: 10px;
 }
@@ -94,6 +94,14 @@ input[type=checkbox] {
     filter: invert(93%) sepia(44%) saturate(3398%) hue-rotate(321deg) brightness(110%) contrast(98%);
 }
 
+.footer {
+    font-size: 0.7rem;
+    color: #365314;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
 /* Main content styling */
 
 .maincontent {
@@ -118,6 +126,7 @@ input[type=checkbox] {
     justify-content: flex-start;
     display: flex;
     flex-direction: column;
+    overflow:auto;
 }
 
 .library-header {

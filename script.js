@@ -56,18 +56,18 @@ function showBooksInLibrary() {
         // rating 
         const bookRating = document.createElement('td');
         if (myLibrary[i].rating === 1) {
-            img = document.createElement('img');
+            const img = document.createElement('img');
             img.src = "icons/star.svg";
             bookRating.appendChild(img);
         } else if (myLibrary[i].rating === 2) {
-            img = document.createElement('img');
+            const img = document.createElement('img');
             img.src = "icons/star.svg";
             bookRating.appendChild(img);
             img2 = document.createElement('img');
             img2.src = "icons/star.svg";
             bookRating.appendChild(img2);
         } else if (myLibrary[i].rating === 3) {
-            img = document.createElement('img');
+            const img = document.createElement('img');
             img.src = "icons/star.svg";
             bookRating.appendChild(img);
             img2 = document.createElement('img');

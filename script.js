@@ -1,6 +1,13 @@
 let myLibrary = [];
 let rating = 0;
 
+if (localStorage.getItem('books') === null) {
+    myLibrary = [];
+} else {
+    const storedBooks = JSON.parse(localStorage.getItem('books'));
+    myLibrary = storedBooks;
+}
+
 function inputNewBook() {
     const titleInput = document.querySelector('#title').value;
     const authorInput = document.querySelector('#author').value;
@@ -36,6 +43,7 @@ function Book(title, author, pages, rating, readornot) {
 }
 
 function showBooksInLibrary() {
+    localStorage.setItem('books', JSON.stringify(myLibrary));
     const booklist = document.querySelector('.book-list')
     booklist.textContent = '';
     for (let i = 0; i < myLibrary.length; i++) {
@@ -129,10 +137,13 @@ function inputRating() {
     document.addEventListener(('click'), (event) => {
         if (event.target.id === 'onestar') {
             onestar.classList.add('ratingstars');
+            twostar.classList.remove('ratingstars');
+            threestar.classList.remove('ratingstars');
             rating = 1;
         } else if (event.target.id === 'twostar') {
             onestar.classList.add('ratingstars');
             twostar.classList.add('ratingstars');
+            threestar.classList.remove('ratingstars');
             rating = 2;
         } else if (event.target.id === 'threestar') {
             onestar.classList.add('ratingstars');

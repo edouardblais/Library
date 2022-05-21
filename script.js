@@ -31,7 +31,8 @@ function addBookToLibrary(title, author, pages, rating, readornot) {
     showBooksInLibrary();
 }
 
-function Book(title, author, pages, rating, readornot) {
+class Book {
+    constructor (title, author, pages, rating, readornot) {
     this.title = title
     this.author = author
     this.pages = pages
@@ -39,8 +40,9 @@ function Book(title, author, pages, rating, readornot) {
     this.readornot = readornot
     this.info = function() {
         return (title + " by " + author + ", " + pages + "pages, " + readornot)
-    }
-}
+    };
+    };
+};
 
 function showBooksInLibrary() {
     localStorage.setItem('books', JSON.stringify(myLibrary));
